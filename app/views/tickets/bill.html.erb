@@ -1,0 +1,4 @@
+<h1> Bill <%= @ticket.plate %> | <%= @ticket.init %> - <%= @ticket.exit %> </h1>
+<label>  Price </label>
+<p> <%= number_to_currency @ticket.price %> </p>
+<%= link_to "back" , tickets_path%>

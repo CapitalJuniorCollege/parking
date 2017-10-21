@@ -3,16 +3,30 @@
   <head>
     <title>Parking</title>
     <%= csrf_meta_tags %>
+    <link rel="stylesheet" href="/assets/stylesheets/bootstrap.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <% if flash[:success] %>
-    <span data-flash class="success"> <%= flash[:success]%> </span>
-    <% elsif flash[:error]%>
-    <span data-flash class="error"> <%= flash[:error]%> </span>
-    <% end %>
-    <%= yield %>
+    <div class="container">
+      <%= link_to "logout", logout_path, method: :delete if user_signed_in? %>
+      <div class="row">
+        <% if flash[:success] %>
+        <p data-flash
+          class="
+           col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3
+           alert alert-success
+          "> <%= flash[:success]%> </p>
+        <% elsif flash[:error]%>
+        <p data-flash
+        class="
+         col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3
+         alert alert-danger
+        "> <%= flash[:error]%> </p>
+        <% end %>
+      </div>
+      <%= yield %>
+    </div>
   </body>
 </html>

@@ -1,0 +1,20 @@
+<%= form_for @ticket do |f| %>
+  <% if @ticket.errors.any? %>
+   <div id="error_explanation">
+     <h2>
+       <%= pluralize(@ticket.errors.count, "error") %> prohibited
+       this article from being saved:
+     </h2>
+     <ul>
+       <% @ticket.errors.full_messages.each do |msg| %>
+         <li><%= msg %></li>
+       <% end %>
+     </ul>
+   </div>
+  <% end %>
+  <%= f.label :plate %><br>
+  <%= f.text_field :plate, required: true %><br>
+  <%= f.label :type %><br>
+  <%= f.text_field :vtype, required: true %><br>
+  <%= f.submit %>
+<% end %>

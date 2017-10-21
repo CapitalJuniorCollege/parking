@@ -1,8 +1,16 @@
 <h1> Sign in perrito </h1>
 <%= form_for :session, url: sign_in_path, method: :post do |f|%>
-    <%= f.label :email %><br>
-    <%= f.email_field :email %><br>
-    <%= f.label :password %><br>
-    <%= f.password_field :password %><br>
-    <%= f.submit %>
+  <div class="row">
+    <div class="form-group col-sm-5">
+      <%= f.label :email %><br>
+      <%= f.email_field :email, class: "form-control"%><br>
+    </div>
+    <div class="form-group col-sm-5">
+      <%= f.label :password %><br>
+      <%= f.password_field :password, class: "form-control"%><br>
+    </div>
+  </div>
+  <div class="row">
+    <%= f.submit "Login", class: "btn btn-primary col-sm-offset-1 col-sm-2" %>
+  </div>
 <% end %>

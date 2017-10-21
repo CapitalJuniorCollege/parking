@@ -1,0 +1,13 @@
+<h1> <%= @ticket.plate %> </h1>
+<label> Vehicle Type  </label>
+<p><%= @ticket.vtype %></p>
+<label> Check in  </label>
+<p><%= @ticket.init %></p>
+
+<%= link_to "Charge", payment_path(@ticket) , method: :post %>
+<form action="/ticket/#{@ticket.id}/payment" method="post">
+  <input type="submit">Charge</input>
+</form>
+<%= link_to "edit" , edit_ticket_path(@ticket) %>
+<a href="/ticket/#{@ticket.id}/edit">edit</a>
+<%= link_to "back" , tickets_path%>

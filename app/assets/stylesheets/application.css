@@ -13,23 +13,3 @@
  *= require_tree .
  *= require_self
  */
-
- .error {
-   position: fixed;
-   top: 2%;
-   left: 50%;
-   transform: translateX(-50%);
-   background-color: #FFCCBC;
-   color: #FF8A65;
-   border: 0.5px solid #FF8A65;
- }
-
-.success {
-  position: fixed;
-  top: 2%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #C5E1A5;
-  color: #D4E157;
-  border: 0.5px solid #D4E157;
-}

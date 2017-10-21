@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       flash[:success] = "Logged in perrito !"
       @current_user = user
-      redirect_to welcome_path
+      redirect_to tickets_path
     else
       flash[:error] = "invalid credentials!"
       redirect_to new_session_path
@@ -19,14 +19,11 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    binding.pry
     session.delete(:user_id)
     flash[:success] = "Logout successfully! Vemos mi perro"
-    redirect_to welcome_path
+    redirect_to new_session_path
   end
 
-  def welcome
-  end
 
   private
 
